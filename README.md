@@ -29,7 +29,7 @@ https://archive.ics.uci.edu/ml/datasets/diabetes+130-us+hospitals+for+years+1999
 ### Initial Exploration
 * Total Records - 101,766
 * Average Length of Stay - 4.39 days
-* 
+* Total Discharges: 26,286
 
 ## 1. Genderwise Admission type
 
