@@ -114,5 +114,29 @@ order by total_type desc ;
 
 
 
+## 6 . Are there patients admitted through the emergency, having A1C results 8 or more who were readmitted within 30 days?  
+
+```sql
+SELECT age , 
+  MAX(CASE WHEN gender = 'Female' THEN total_patients END) AS female_total,
+  MAX(CASE WHEN gender = 'Male' THEN total_patients END) AS male_total
+FROM (
+  SELECT age , gender, COUNT(*) AS total_patients
+  FROM diabetic_data
+  WHERE readmitted = '<30' AND admission_type_id = '1' AND a1cresult = '>8'
+  GROUP BY gender , age
+) AS cte
+GROUP by age ;
+
+```
+
+## Result : 
+
+![image](https://github.com/mahiyan446/Healthcare/assets/138512359/56d3b40c-db2a-4fe9-9a0b-53985261aa3d)
+
+
+
+
+
 
 
