@@ -81,4 +81,38 @@ order by  total_num desc ;
 ## Result
 ![image](https://github.com/mahiyan446/Healthcare/assets/138512359/9831e577-356e-402b-86c3-46d5937ed80e)
 
+## 4. Is there any association between admission type and blood glucose level (A1Cresult)
+
+```sql
+select admission_type_id , 
+count(case when  a1cresult = '>7' then 1 end ) as a1c_7,
+count (case when a1cresult = '>8' then 1 end)as a1c_8
+from diabetic_data
+where gender = 'Male' and admission_type_id in ('1', '2', '3')
+group by admission_type_id 
+order by a1c_7 desc , a1c_8 desc ;
+```
+
+## Result:
+
+![image](https://github.com/mahiyan446/Healthcare/assets/138512359/52081090-a745-4ce7-87e7-80dd2d3eca54)
+
+
+## 5 . Patients admitted through the emergency, having A1C results 8 or more who died 
+
+```sql
+select gender ,age ,
+count(*) as total_type
+from diabetic_data
+where  discharge_disposition_id in('11', '18', '19','20', '21' , '26', '25') and a1cresult ='>8' and admission_type_id ='1'
+group by gender , age 
+order by total_type desc ;
+
+```
+## Result:
+![image](https://github.com/mahiyan446/Healthcare/assets/138512359/5969e151-2c3a-4f62-a562-ea11905a9a58)
+
+
+
+
 
