@@ -54,3 +54,31 @@ ORDER BY admission_type_id;
 ![image](https://github.com/mahiyan446/Healthcare/assets/138512359/ec37750e-afbe-4dff-bc9e-48adf403187e)
 
 
+## 2. Finding Missing value in medical_speciality
+
+```sql
+select distinct medical_specialty ,
+count(*) as total 
+from diabetic_data 
+where medical_specialty = '?'
+group by  medical_specialty ;
+
+```
+
+Result: 
+
+![image](https://github.com/mahiyan446/Healthcare/assets/138512359/022fc010-b171-4306-9ec5-67a5a9fac71b)
+
+## 3. Counting which medical_speciality is Admitted the most
+```sql
+select medical_specialty,
+count(*) as total_num
+from diabetic_data 
+group by medical_specialty 
+order by  total_num desc ;
+
+```
+## Result
+![image](https://github.com/mahiyan446/Healthcare/assets/138512359/9831e577-356e-402b-86c3-46d5937ed80e)
+
+
