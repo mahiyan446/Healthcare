@@ -7,14 +7,16 @@ The two files are
 ### Project Overview
 
  It includes over 50 features representing patient and hospital outcomes. Information was extracted from the database for encounters that satisfied the following criteria.
-• It is an inpatient encounter (a hospital admission). It is a diabetic encounter, that is, one during which any kind of diabetes was entered to the
+* It is an inpatient encounter (a hospital admission). It is a diabetic encounter, that is, one during which any kind of diabetes enters to the
 system as a diagnosis.
-• The length of stay was at least 1 day and at most 14 days.
-• Laboratory tests were performed during the encounter.
-• Medications were administered during the encounter.
+* The length of stay was at least 1 day and at most 14 days.
+* Laboratory tests were performed during the encounter.
+* Medications were administered during the encounter.
 
-The data contains such attributes as patient number, race, gender, age, admission type, time
-in hospital, medical specialty of admitting physician, number of lab tests performed, HbA1c test
+The data contains such attributes as
+*patient number, race, gender, age, admission type, 
+time in hospital,
+medical specialty of admitting physician, number of lab tests performed, HbA1c test
 result, diagnosis, number of medications, diabetic medications, 
 number of outpatient, inpatient, and
 emergency visits in the year before the hospitalization, etc.
